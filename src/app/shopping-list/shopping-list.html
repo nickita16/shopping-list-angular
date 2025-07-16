@@ -1,0 +1,37 @@
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+</div>
+<div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+</div>
+
+<div class="list-group">
+    
+  <div class="list-group-item" *ngFor="let item of items">
+    <!-- <div>
+        <div class="bold-text">id:</div>
+        <div>{{ item.id }}</div>
+        </div>  -->
+    <div>
+        <div>
+            <div class="bold-text">Name:</div>
+            <div>{{ item.name }}</div>
+            </div> 
+        <div>
+            <div class="bold-text">Description:</div>
+            <div>{{ item.description }}</div>
+            </div>
+        <div>
+            <div class="bold-text">Price:</div>
+            <div>{{ item.price }} $</div> 
+            </div>
+        <div class="created-date">
+            <div class="bold-text">Creation date:</div>
+            <div>{{ item.created_at?.slice(8,10) }}/{{ item.created_at?.slice(5,7) }}/{{ item.created_at?.slice(2,4) }}, {{ item.created_at?.slice(11,16) }}</div> 
+            </div>
+        </div>
+        <div>
+            <button class="button-delete" (click)="deleteItem(item.id)">Delete</button>
+            </div>
+  </div>
+</div>
